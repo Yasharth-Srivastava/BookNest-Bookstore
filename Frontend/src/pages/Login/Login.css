@@ -66,6 +66,29 @@
   box-shadow: 0 0 0 3px rgba(2, 145, 181, 0.3);
 }
 
+/* Example CSS for error and success messages */
+.error-message {
+    color: #ff4d4f; /* Red */
+    background-color: #ffe7e7;
+    border: 1px solid #ff4d4f;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.success-message {
+    color: #52c41a; /* Green */
+    background-color: #f6ffed;
+    border: 1px solid #52c41a;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
 /* Login Button */
 .login-container .login-form-wrapper .login-form button[type="submit"] {
   background-color: #0291B5; /* Light Teal */
