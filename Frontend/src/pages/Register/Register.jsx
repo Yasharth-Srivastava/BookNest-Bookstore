@@ -17,6 +17,9 @@ const Register = () => {
         }
     )
 
+    const [error, setError] = useState(''); 
+    const [successMessage, setSuccessMessage] = useState(''); 
+
     const handleChange = (e) => {
         const {name , value} = e.target;
         setUserData(prevData => ({
@@ -29,14 +32,39 @@ const Register = () => {
     console.log("Page loaded")
     const handleClick = async (e) =>{
         e.preventDefault();
+        setError(''); 
+        setSuccessMessage('');
+
+        if (userData.password.length < 8) {
+            setError("Password must be at least 8 characters long.");
+            return; 
+        }
+
+        if (!userData.username || !userData.email || !userData.password || !userData.address) {
+            setError("Please fill in all required fields.");
+            return;
+        }
         try{
             const response = await axios.post("http://localhost:1000/api/users/register", userData);
             // console.log("User Registered", response.data);
-            alert("Registration Successful");
-            navigate('/login');
-        }catch(error){
+            setSuccessMessage(response.data.message || "Registration Successful!");
+            setUserData({
+                username: "",
+                email: "",
+                password: "",
+                address: ""
+            });
+            setTimeout(() => {
+                navigate('/login');
+            }, 1500);
+        }catch(err){
             // console.log("Error", error);
-            alert("Someting went wrong");
+            console.error("Registration failed:", err.response ? err.response.data : err);
+            if (err.response) {
+                setError(err.response.data.message); // Display error message from backend
+            } else {
+                setError('An unexpected error occurred during registration. Please try again.');
+            }
         }
         // console.log("Clicked");
     };
@@ -89,6 +117,9 @@ const Register = () => {
                         required
                     />
                 </div>
+
+                {error && <p className="error-message">{error}</p>}
+                {successMessage && <p className="success-message">{successMessage}</p>}
 
                 <button type='submit' onClick={handleClick}>Register</button>
                 
