@@ -1,0 +1,153 @@
+/* Hero.css */
+
+/* Main Hero Section */
+.hero {
+  background-color: #072743; /* Dark Navy */
+  display: flex;
+  flex-direction: column; /* Default to column on small screens */
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  min-height: calc(100vh - 72px); /* Adjust based on navbar height, approx. 72px */
+  justify-content: center;
+  gap: 40px; /* Space between content and image */
+}
+
+/* Hero Content (Text and Buttons) */
+.hero .hero-content {
+  max-width: 600px;
+}
+
+/* Hero Heading */
+.hero .hero-content h1 {
+  font-size: 3.5em; /* Large font for impact */
+  color: #0291B5; /* Light Teal */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Hero Paragraph */
+.hero .hero-content p {
+  font-size: 1.3em;
+  color: #f0f0f0; /* Light Grey */
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Hero Buttons Container */
+.hero .hero-content .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Primary Hero Button */
+.hero .hero-content .hero-buttons .hero-btn {
+  background-color: #066886; /* Teal Blue */
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* Ensure it looks like a button even if it's a link */
+}
+
+/* Primary Hero Button Hover Effect */
+.hero .hero-content .hero-buttons .hero-btn:hover {
+  background-color: #0291B5; /* Light Teal on hover */
+  transform: translateY(-3px);
+}
+
+
+/* Hero Image */
+.hero .hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; /* Slightly rounded corners for the image */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+}
+
+
+/* Responsive Adjustments */
+@media (min-width: 992px) {
+  .hero {
+    flex-direction: row; /* Row layout for larger screens */
+    text-align: left; /* Align text to left */
+    padding: 80px 40px;
+    gap: 80px; /* More space between content and image */
+  }
+
+  .hero .hero-content {
+    flex: 1; /* Allow content to take available space */
+    text-align: left; /* Align text to left */
+  }
+
+  .hero .hero-content .hero-buttons {
+    justify-content: flex-start; /* Align buttons to the left */
+  }
+
+  .hero .hero-content h1 {
+    font-size: 4.2em; /* Larger heading on desktop */
+  }
+
+  .hero .hero-content p {
+    font-size: 1.4em;
+  }
+
+  .hero .hero-image {
+    flex: 1; /* Allow image to take available space */
+    display: flex; /* Use flex to center image */
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+  }
+
+  .hero .hero-image img {
+    max-width: 500px; /* Max width for image on desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 15px;
+    gap: 30px;
+  }
+  .hero .hero-content h1 {
+    font-size: 2.8em;
+  }
+  .hero .hero-content p {
+    font-size: 1.2em;
+  }
+  .hero .hero-content .hero-buttons .hero-btn {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 30px 10px;
+    gap: 20px;
+    min-height: calc(100vh - 60px); /* Adjust min-height for smaller nav if applicable */
+  }
+  .hero .hero-content h1 {
+    font-size: 2.2em;
+  }
+  .hero .hero-content p {
+    font-size: 1em;
+  }
+  .hero .hero-content .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px;
+  }
+  .hero .hero-content .hero-buttons .hero-btn{
+    width: 80%; /* Make button wider when stacked */
+    max-width: 300px;
+    margin: 0 auto; /* Center button */
+  }
+  .hero .hero-image img {
+    max-width: 90%; /* Ensure image doesn't overflow */
+  }
+}

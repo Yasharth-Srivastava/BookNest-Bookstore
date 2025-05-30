@@ -1,0 +1,142 @@
+/* Login.css */
+
+
+/* Main Login Container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 72px); /* Adjust based on navbar height */
+  padding: 20px;
+  background-color: #072743; /* Dark Navy */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Login Title */
+.login-container .login-title {
+  font-size: 3em;
+  color: #0291B5; /* Light Teal */
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Login Form Wrapper */
+.login-container .login-form-wrapper {
+  background-color: #11395E; /* Medium Navy */
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 450px; /* Limit form width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Login Form (inside form wrapper) */
+.login-container .login-form-wrapper .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between input fields */
+}
+
+/* Input Fields (email, password) */
+.login-container .login-form-wrapper .login-form input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #066886; /* Teal Blue */
+  border-radius: 6px;
+  background-color: #072743; /* Dark Navy */
+  color: #ffffff;
+  font-size: 1.1em;
+  box-sizing: border-box; /* Include padding and border in width */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Placeholder Color */
+.login-container .login-form-wrapper .login-form input::placeholder {
+  color: #a0a0a0; /* Lighter grey for placeholder */
+}
+
+/* Input Focus Effect */
+.login-container .login-form-wrapper .login-form input:focus {
+  outline: none;
+  border-color: #0291B5; /* Light Teal on focus */
+  box-shadow: 0 0 0 3px rgba(2, 145, 181, 0.3);
+}
+
+/* Login Button */
+.login-container .login-form-wrapper .login-form button[type="submit"] {
+  background-color: #0291B5; /* Light Teal */
+  color: #ffffff;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px; /* Space above button */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; /* Full width button */
+  box-sizing: border-box;
+}
+
+/* Login Button Hover Effect */
+.login-container .login-form-wrapper .login-form button[type="submit"]:hover {
+  background-color: #066886; /* Teal Blue on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+  .login-container .login-title {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+  }
+  .login-container .login-form-wrapper {
+    padding: 30px 20px;
+    max-width: 90%; /* Take more width on smaller screens */
+  }
+  .login-container .login-form-wrapper .login-form {
+    gap: 15px;
+  }
+  .login-container .login-form-wrapper .login-form input {
+    font-size: 1em;
+    padding: 10px 12px;
+  }
+  .login-container .login-form-wrapper .login-form button[type="submit"] {
+    font-size: 1.1em;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+  }
+  .login-container .login-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .login-container .login-form-wrapper {
+    padding: 25px 15px;
+    max-width: 100%; /* Full width on very small screens */
+    box-shadow: none; /* Remove shadow for very small screens */
+    background-color: transparent; /* Make background transparent on very small screens */
+  }
+  .login-container .login-form-wrapper .login-form {
+    gap: 12px;
+  }
+  .login-container .login-form-wrapper .login-form input {
+    font-size: 0.9em;
+    padding: 8px 10px;
+  }
+  .login-container .login-form-wrapper .login-form button[type="submit"] {
+    font-size: 1em;
+    padding: 10px 15px;
+  }
+}

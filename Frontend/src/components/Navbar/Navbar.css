@@ -1,0 +1,491 @@
+/* Navbar.css */
+
+.navbar {
+  background-color: #072743; /* Dark Navy */
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0291B5; /* Replaced black with Light Teal */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar .navbar-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  font-weight: 500;
+  color: #f0f0f0; /* Replaced #4B5563 with Light Grey */
+  margin: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #f0f0f0; /* Replaced #4B5563 with Light Grey */
+}
+
+.navbar-links a:hover {
+  color: #0291B5; /* Replaced #2563EB with Light Teal */
+}
+
+.navbar-search {
+  display: flex;
+  gap: 8px;
+}
+
+.search-input {
+  border: 1px solid #066886; /* Replaced #D1D5DB with Teal Blue */
+  border-radius: 4px;
+  padding: 6px 12px;
+  outline: none;
+  background-color: #11395E; /* Added Medium Navy for consistency */
+  color: #ffffff; /* Added white text for consistency */
+}
+
+.search-input:focus {
+  border-color: #0291B5; /* Replaced #2563EB with Light Teal */
+  box-shadow: 0 0 0 2px rgba(2, 145, 181, 0.3); /* Adjusted shadow color to match Light Teal */
+}
+
+.search-button {
+  background-color: #066886; /* Replaced #2563EB with Teal Blue */
+  color: white;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0291B5; /* Replaced #1D4ED8 with Light Teal */
+}
+
+.auth-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Style links like buttons */
+.auth-links a {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Login as outlined button */
+.auth-links .login-link {
+  border: 1px solid #066886; /* Replaced #2563EB with Teal Blue */
+  background-color: #066886; /* Replaced #2563EB with Teal Blue */
+  color: white;
+}
+
+.auth-links .login-link:hover {
+  background-color: #0291B5; /* Replaced #1D4ED8 with Light Teal */
+}
+
+/* Sign Up as filled button */
+.auth-links .signup-link {
+  background-color: #066886; /* Replaced #2563EB with Teal Blue */
+  border: 1px solid #066886; /* Replaced #2563EB with Teal Blue */
+  color: white;
+}
+
+.auth-links .signup-link:hover {
+  background-color: #0291B5; /* Replaced #1D4ED8 with Light Teal */
+}
+
+.logout-link{
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #dc3545; /* Replaced #2563EB with a red color */
+  background-color: #dc3545; /* Replaced #2563EB with a red color */
+  color: white;
+}
+
+.logout-link:hover { /* Added a simple hover for logout consistency */
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.profile-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+
+.user-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  vertical-align: middle;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  border: 2px solid #066886; 
+} 
+
+.user-profile:hover {
+  border-color: #0291B5; 
+}
+
+
+.profile-menu {
+  width: 160px;
+  position: absolute;
+  top: 55px; /* Changed from 120px to 100% relative to parent for better positioning */
+  right: 0;
+  background-color: #11395E; /* Replaced #fff with Medium Navy */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Adjusted border for dark theme */
+  padding: 15px 0; /* Adjusted from 40px 25px */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1001; /* Ensure it's above other content */
+}
+
+/* Added specific styles for the welcome span and menu items */
+.profile-menu span {
+  color: #f0f0f0; /* Light Grey */
+  padding: 10px 20px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 5px;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width */
+  text-align: left; /* Align text to left */
+}
+
+.profile-menu a,
+.profile-menu button {
+  color: #f0f0f0; /* Light Grey */
+  text-decoration: none;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 100%; /* Ensure full width clickable area */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.profile-menu a:hover,
+.profile-menu button:hover {
+  background-color: #066886; /* Teal Blue */
+  color: #ffffff;
+}
+
+.profile-menu .logout-link {
+  color: #ff6b6b; /* A distinct color for logout */
+  margin-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-menu .logout-link:hover {
+  background-color: #dc3545; /* Red color for hover */
+  color: #ffffff;
+}
+
+
+.profile-links .hamburger-menu{
+  display: none; 
+  /* border: 2px solid #066886;  */
+}
+
+.profile-links .hamburger-menu .hamburger-links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent */
+}
+
+.profile-links .hamburger-menu .hamburger-links a{
+  color: #f0f0f0; /* Light Grey */
+  text-decoration: none;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 100%; /* Ensure full width clickable area */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+
+
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 1024px) {
+  .navbar {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  .navbar .title {
+    font-size: 2em;
+  }
+  .navbar .navbar-links {
+    display: none;
+  }
+
+  .navbar .navbar-search {
+    margin-right: 15px;
+  }
+
+  .profile-links .hamburger-menu {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease; /* Replaced #2563EB with Teal Blue */
+}
+
+ .navbar .profile-links .profile-section .profile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 55px;
+    right: 15px; /* Adjust for smaller screens */
+    min-width: 160px;
+  }
+
+  .profile-links .hamburger-menu img {
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #066886;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .profile-links .hamburger-menu img:hover {
+    border-color: #0291B5; /* Replaced #2563EB with Light Teal */
+  }
+
+  .profile-links .hamburger-menu .hamburger-links {
+    position: absolute;
+    top: 55px; /* Adjusted for better visibility */
+    right: 0;
+    background-color: #11395E; /* Replaced #fff with Medium Navy */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Adjusted border for dark theme */
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1001; /* Ensure it's above other content */
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .navbar .title {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .navbar .navbar-links {
+    display: none;
+  }
+
+  .navbar .navbar-search {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
+    justify-content: center;
+  }
+
+  .navbar .search-input {
+    flex-grow: 1; /* Allow input to take available space */
+  }
+
+  .navbar .auth-links {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .navbar .profile-links .profile-section .profile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 55px;
+    right: 15px; /* Adjust for smaller screens */
+    min-width: 160px;
+  }
+
+  .profile-links .hamburger-menu {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease; /* Replaced #2563EB with Teal Blue */
+}
+  .profile-links .hamburger-menu img {
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #066886;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .profile-links .hamburger-menu img:hover {
+    border-color: #0291B5; /* Replaced #2563EB with Light Teal */
+  }
+
+  .profile-links .hamburger-menu .hamburger-links {
+    position: absolute;
+    top: 55px; /* Adjusted for better visibility */
+    right: 0;
+    background-color: #11395E; /* Replaced #fff with Medium Navy */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Adjusted border for dark theme */
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1001; /* Ensure it's above other content */
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  .navbar .title {
+    font-size: 1.6em;
+    text-align: center;
+  }
+  .navbar .navbar-links {
+    display: none;
+  }
+  .navbar .navbar-search {
+    flex-direction: column; /* Stack search input and button */
+  }
+  .navbar .search-button {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%; /* Full width button */
+  }
+  .navbar .auth-links {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  .navbar .auth-links .login-link,
+   .navbar .auth-links .signup-link{    
+    padding: 6px 8px;
+    text-align: center;
+  }
+  
+  .navbar .auth-links .login-link,
+  .navbar .auth-links .signup-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar .profile-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar .profile-menu {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    min-width: unset;
+  }
+
+  .profile-links .hamburger-menu  img{
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #066886;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .profile-links .hamburger-menu img:hover {
+    border-color: #0291B5; /* Replaced #2563EB with Light Teal */
+  }
+
+  .profile-links .hamburger-menu .hamburger-links {
+    position: absolute;
+    top: 55px; /* Adjusted for better visibility */
+    right: 0;
+    background-color: #11395E; /* Replaced #fff with Medium Navy */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Adjusted border for dark theme */
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1001; /* Ensure it's above other content */
+  }
+
+}

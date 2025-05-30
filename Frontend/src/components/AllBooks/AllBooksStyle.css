@@ -1,0 +1,138 @@
+/* General Styling */
+.add-books-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5em;
+  color: #0291B5; /* Title color: light-teal */
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch; /* Ensures cards have equal height */
+}
+
+/* Book Card */
+.book-card {
+  background-color: #11395E; /* Card background color: medium-navy */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes content apart, useful if descriptions are added */
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.book-card img {
+  max-width: 100%;
+  height: 300px; /* Fixed height for consistent image display */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-card h2 {
+  font-size: 1.5em;
+  color: #0291B5; /* Book title color: light-teal */
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Keeps book titles on a single line */
+}
+
+.book-card h3 {
+  font-size: 1em;
+  color: #066886; /* Author name color: teal-blue */
+  margin-bottom: 10px;
+}
+
+.book-card p {
+  font-size: 1.1em;
+  color: #f0f0f0; /* Price text color: light grey */
+  font-weight: bold;
+  margin-top: auto; /* Pushes price to the bottom */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .title {
+    font-size: 2em;
+  }
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+  }
+  .book-card img {
+    height: 250px;
+  }
+  .book-card h2 {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-books-container {
+    padding: 15px;
+  }
+  .title {
+    font-size: 1.8em;
+  }
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  .book-card img {
+    height: 200px;
+  }
+  .book-card h2 {
+    font-size: 1.2em;
+  }
+  .book-card h3 {
+    font-size: 0.9em;
+  }
+  .book-card p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 576px) {
+  .add-books-container {
+    padding: 10px;
+  }
+  .title {
+    font-size: 1.5em;
+  }
+  .books-grid {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+    gap: 15px;
+  }
+  .book-card {
+    padding: 15px;
+  }
+  .book-card img {
+    height: 250px; /* Adjust height for single column to be readable */
+  }
+  .book-card h2 {
+    font-size: 1.4em;
+  }
+}

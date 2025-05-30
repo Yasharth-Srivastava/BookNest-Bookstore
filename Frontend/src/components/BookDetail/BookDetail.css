@@ -1,0 +1,176 @@
+/* BookDetail.css */
+
+/* General Body Styling */
+
+/* Book Detail Container */
+.book-detail-container {
+  display: flex;
+  flex-direction: column; /* Default to column for small screens */
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 40px auto; /* Add some margin around the container */
+  background-color: #11395E; /* Medium Navy */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.book-detail-container img {
+  width: 100%;
+  max-width: 300px; /* Limit image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px; /* Space below image on small screens */
+}
+
+/* Book Information Section */
+.book-detail-container .book-info {
+  text-align: center;
+  margin-bottom: 30px; /* Space below info on small screens */
+}
+
+.book-detail-container .book-info h1 {
+  font-size: 2.5em;
+  color: #0291B5; /* Light Teal */
+  margin-bottom: 10px;
+}
+
+.book-detail-container .book-info h2 {
+  font-size: 1.5em;
+  color: #066886; /* Teal Blue */
+  margin-bottom: 20px;
+}
+
+.book-detail-container .book-info p {
+  font-size: 1.1em;
+  color: #f0f0f0; /* Light Grey */
+  margin-bottom: 10px;
+}
+
+.book-detail-container .book-info p strong {
+  color: #0291B5; /* Light Teal for strong text */
+}
+
+/* Book Actions Section (Favorites & Cart) */
+.book-detail-container .book-actions {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust if needed */
+}
+
+.book-detail-container .book-actions .favorites,
+.book-detail-container .book-actions .cart {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%; /* Make them circular */
+  background-color: #066886; /* Teal Blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-detail-container .book-actions .favorites:hover,
+.book-detail-container .book-actions .cart:hover {
+  background-color: #0291B5; /* Light Teal on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.book-detail-container .book-actions .favorites img,
+.book-detail-container .book-actions .cart img {
+  width: 30px; /* Icon size */
+  height: 30px; /* Icon size */
+  object-fit: contain; /* Ensure icons fit without cropping */
+  margin: 0; /* Override default image margin */
+  box-shadow: none; /* Remove image shadow */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .book-detail-container {
+    flex-direction: row; /* Row layout for larger screens */
+    text-align: left; /* Align text to left */
+    align-items: flex-start; /* Align items to the top */
+    gap: 40px; /* Space between image and info */
+    padding: 40px;
+  }
+
+  .book-detail-container img {
+    margin-bottom: 0; /* Remove bottom margin for row layout */
+    max-width: 350px; /* Slightly larger image on desktop */
+  }
+
+  .book-detail-container .book-info {
+    flex: 1; /* Allow info to take remaining space */
+    margin-bottom: 0;
+    text-align: left; /* Ensure text is left-aligned */
+  }
+
+  .book-detail-container .book-actions {
+    flex-direction: column; /* Stack actions vertically */
+    gap: 20px;
+    margin-left: 40px; /* Push actions to the right of info */
+    margin-top: 0; /* Remove top margin */
+  }
+}
+
+@media (max-width: 767px) {
+  .book-detail-container {
+    margin: 20px auto;
+    padding: 30px 15px;
+  }
+  .book-detail-container img {
+    max-width: 250px;
+  }
+  .book-detail-container .book-info h1 {
+    font-size: 2em;
+  }
+  .book-detail-container .book-info h2 {
+    font-size: 1.3em;
+  }
+  .book-detail-container .book-info p {
+    font-size: 1em;
+  }
+  .book-detail-container .book-actions {
+    gap: 20px;
+  }
+  .book-detail-container .book-actions .favorites img,
+  .book-detail-container .book-actions .cart img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-detail-container {
+    padding: 20px 10px;
+    margin: 15px auto;
+  }
+  .book-detail-container img {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  .book-detail-container .book-info h1 {
+    font-size: 1.8em;
+  }
+  .book-detail-container .book-info h2 {
+    font-size: 1.2em;
+  }
+  .book-detail-container .book-info p {
+    font-size: 0.95em;
+  }
+  .book-detail-container .book-actions {
+    flex-direction: row; /* Keep actions in a row if space allows on smaller phones */
+    gap: 15px;
+  }
+  .book-detail-container .book-actions .favorites img,
+  .book-detail-container .book-actions .cart img {
+    width: 20px;
+    height: 20px;
+  }
+}

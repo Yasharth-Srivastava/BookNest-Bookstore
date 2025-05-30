@@ -1,0 +1,209 @@
+/* History.css */
+
+
+/* Main History Container */
+.history-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #072743; /* Dark Navy */
+  min-height: calc(100vh - 72px); /* Adjust based on navbar height */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* History Title */
+.history-container .history-title {
+  font-size: 3em;
+  color: #0291B5; /* Light Teal */
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Order List Container (Flexbox for grid layout) */
+.history-container .order-list {
+  display: grid; /* Use CSS Grid for a responsive layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Auto-fit columns */
+  gap: 30px; /* Space between order cards */
+  justify-content: center; /* Center cards if they don't fill the row */
+  align-items: stretch; /* Ensure cards stretch to fill height */
+}
+
+/* Individual Order Card */
+.history-container .order-list .order-card {
+  background-color: #11395E; /* Medium Navy */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push total/date to bottom */
+}
+
+/* Order Status */
+.history-container .order-list .order-card .order-card-status {
+  font-size: 1.6em;
+  color: #0291B5; /* Light Teal */
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.history-container .order-list .order-card .order-card-status span {
+  color: #f0f0f0; /* White for the actual status value */
+}
+
+/* Order Items List */
+.history-container .order-list .order-card .order-items {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+/* Individual Order Item */
+.history-container .order-list .order-card .order-items .order-item {
+  background-color: #072743; /* Dark Navy for item background */
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Item Name and Author */
+.history-container .order-list .order-card .order-items .order-item .item-name {
+  font-size: 1.1em;
+  color: #ffffff; /* White */
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.history-container .order-list .order-card .order-items .order-item .item-name strong {
+  color: #0291B5; /* Light Teal for book name */
+}
+
+/* Item Details (Price, Quantity) */
+.history-container .order-list .order-card .order-items .order-item .item-details {
+  font-size: 0.95em;
+  color: #a0a0a0; /* Lighter grey for details */
+  margin-bottom: 0;
+}
+
+/* Order Total and Date */
+.history-container .order-list .order-card .order-total,
+.history-container .order-list .order-card .order-date {
+  font-size: 1.2em;
+  color: #066886; /* Teal Blue */
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.history-container .order-list .order-card .order-date {
+  font-size: 1em;
+  color: #f0f0f0; /* Light Grey for date */
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+/* Message for no orders */
+.history-container .no-orders-message {
+  font-size: 1.5em;
+  color: #f0f0f0; /* Light Grey */
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 992px) {
+  .history-container {
+    padding: 30px 15px;
+  }
+  .history-container .history-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  .history-container .order-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  .history-container .order-list .order-card {
+    padding: 20px;
+  }
+  .history-container .order-list .order-card .order-card-status {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .history-container .order-list .order-card .order-items .order-item {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+  }
+  .history-container .order-list .order-card .order-items .order-item .item-name {
+    font-size: 1em;
+  }
+  .history-container .order-list .order-card .order-items .order-item .item-details {
+    font-size: 0.9em;
+  }
+  .history-container .order-list .order-card .order-total,
+  .history-container .order-list .order-card .order-date {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .history-container {
+    padding: 25px 10px;
+  }
+  .history-container .history-title {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+  .history-container .order-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow wider cards on single column layouts */
+    gap: 20px;
+  }
+  .history-container .order-list .order-card {
+    padding: 18px;
+  }
+  .history-container .no-orders-message {
+    font-size: 1.3em;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-container {
+    padding: 20px 10px;
+  }
+  .history-container .history-title {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+  .history-container .order-list {
+    grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+    gap: 15px;
+  }
+  .history-container .order-list .order-card {
+    padding: 15px;
+  }
+  .history-container .order-list .order-card .order-card-status {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+  }
+  .history-container .order-list .order-card .order-items .order-item {
+    padding: 8px 10px;
+    margin-bottom: 5px;
+  }
+  .history-container .order-list .order-card .order-total,
+  .history-container .order-list .order-card .order-date {
+    font-size: 1em;
+  }
+  .history-container .no-orders-message {
+    font-size: 1.1em;
+    margin-top: 30px;
+  }
+}
